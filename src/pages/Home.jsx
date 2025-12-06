@@ -13,10 +13,6 @@ const Home = () => {
         gl={{ toneMappingExposure: 1.2 }}
         shadows
       >
-        {/* <EffectComposer>
-          <SSAO radius={0.2} intensity={20} luminanceInfluence={0.4} />
-          <Bloom intensity={0.3} luminanceThreshold={0.8} />
-        </EffectComposer> */}
 
         <Suspense fallback={<Loader />}>
           {/* Lights */}
