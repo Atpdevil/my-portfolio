@@ -1,8 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { Home, Projects, About, Contact } from './pages';
 import Navbar from './components/Navbar';
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment } from "@react-three/drei";
 
 const App = () => {
   return (
