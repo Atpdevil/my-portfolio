@@ -61,7 +61,7 @@ const Home = ({ isRotating, setIsRotating }) => {
           {/* Camera Controls */}
           <OrbitControls
             enablePan={false}
-            enableZoom={false}
+            enableZoom={true}
             minPolarAngle={Math.PI / 3}
             maxPolarAngle={Math.PI / 2.2}
             rotateSpeed={0.45}
