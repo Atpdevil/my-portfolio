@@ -1,12 +1,15 @@
-import { Suspense, React, useRef, useEffect } from "react";
+import { Suspense, React, useRef, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import Loader from "../components/Loader";
 import BakerModel from "../components/BakerModel";
 import CloudLayer from "../components/CloudLayer";
+import HomeInfo from "../components/HomeInfo";
 
-const Home = ({ isRotating, setIsRotating }) => {
+const Home = () => {
   const modelRef = useRef();
+  const [isRotating, setIsRotating] = useState(false);
+  const [currentStage, setcurrentStage] = useState(1);
 
   const handleKeyDown = (e) => {
     if (!modelRef.current) return;
@@ -22,6 +25,9 @@ const Home = ({ isRotating, setIsRotating }) => {
 
   return (
     <section className="w-full h-screen relative bg-[#d9d9d9]">
+      <div className="absolute bottom-10 left-10 z-10">
+        {currentStage && <HomeInfo currentStage={currentStage} />}
+      </div>
       <Canvas
         camera={{ position: [31, 21, 31], fov: 45 }}
         gl={{ toneMappingExposure: 1.2 }}
