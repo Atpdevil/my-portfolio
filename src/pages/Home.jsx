@@ -3,7 +3,6 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import Loader from "../components/Loader";
 import BakerModel from "../components/BakerModel";
-import CloudLayer from "../components/CloudLayer";
 import HomeInfo from "../components/HomeInfo";
 
 const Home = () => {
@@ -41,9 +40,6 @@ const Home = () => {
             background={true}
             blur={0.25}
           />
-
-          {/* Moving clouds above the scene */}
-          <CloudLayer />
 
           {/* Lights */}
           <ambientLight intensity={0.4} />
