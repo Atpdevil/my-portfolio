@@ -6,6 +6,7 @@ import {
     nextjs,
     nodejs,
     react,
+    // contact,
     typescript
 } from "../assets/icons";
 

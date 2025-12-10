@@ -6,6 +6,7 @@ import nextjs from "./nextjs.png";
 import nodejs from "./nodejs.png";
 import react from "./react.png";
 import typescript from "./typescript.png";
+// import contact from './contact.png';
 
 export {
   css,
@@ -16,4 +17,5 @@ export {
   nodejs,
   react,
   typescript,
+  // contact
 };

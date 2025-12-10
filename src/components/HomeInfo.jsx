@@ -32,7 +32,7 @@ const HomeInfo = () => {
       >
       <Link
         to="/about"
-        className="block bg-green-600 hover:bg-green-700 text-white text-center py-1 rounded-lg transition font-medium"
+        className="block bg-green-600 py-1 rounded-lg transition font-medium"
       >
         Learn more <span className="text-lg">↠</span>
         </Link>
