@@ -40,7 +40,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="relative flex lg:flex-row flex-col max-container">
+    <div className="relative flex lg:flex-row flex-col max-container h-full">
       <div className="flex-1 min-w-50% flex-col">
         <h1 className="head-text">Get in Touch</h1>
 
