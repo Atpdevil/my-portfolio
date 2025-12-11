@@ -1,21 +1,25 @@
-import css from "./css.png";
-import github from "./github.png";
-import html from "./html.png";
-import javascript from "./javascript.png";
-import nextjs from "./nextjs.png";
-import nodejs from "./nodejs.png";
-import react from "./react.png";
-import typescript from "./typescript.png";
-// import contact from './contact.png';
+import css from './css.svg'
+import github from './github.svg'
+import html from './html.svg'
+import javascript from './javascript.svg'
+import nextjs from './nextjs.svg'
+import nodejs from './nodejs.svg'
+import react from './react.svg'
+import tailwindcss from './tailwindcss.svg'
+import typescript from './typescript.svg'
+import linkedin from './linkedin.svg'
+import contact from './contact.svg'
 
 export {
-  css,
-  github,
-  html,
-  javascript,
-  nextjs,
-  nodejs,
-  react,
-  typescript,
-  // contact
-};
+    css,
+    github,
+    html,
+    javascript,
+    nextjs,
+    nodejs,
+    react,
+    tailwindcss,
+    typescript,
+    linkedin,
+    contact
+}
