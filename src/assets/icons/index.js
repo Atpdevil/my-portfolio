@@ -9,6 +9,8 @@ import tailwindcss from './tailwindcss.svg'
 import typescript from './typescript.svg'
 import linkedin from './linkedin.svg'
 import contact from './contact.svg'
+import pricewise from './pricewise.svg'
+import arrow from './arrow.svg'
 
 export {
     css,
@@ -21,5 +23,7 @@ export {
     tailwindcss,
     typescript,
     linkedin,
-    contact
+    contact,
+    arrow,
+    pricewise
 }

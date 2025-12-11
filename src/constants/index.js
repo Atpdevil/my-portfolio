@@ -10,7 +10,9 @@ import {
     contact,
     tailwindcss,
     linkedin,
-    typescript
+    typescript,
+    arrow,
+    pricewise
 } from "../assets/icons";
 
 export const skills = [
