@@ -15,28 +15,13 @@ import {
 
 export const skills = [
     {
-        imageUrl: css,
-        name: "CSS",
-        type: "Frontend",
-    },
-    {
-        imageUrl: github,
-        name: "GitHub",
-        type: "Version Control",
-    },
-    {
         imageUrl: html,
         name: "HTML",
         type: "Frontend",
     },
     {
-        imageUrl: javascript,
-        name: "JavaScript",
-        type: "Frontend",
-    },
-    {
-        imageUrl: nextjs,
-        name: "Next.js",
+        imageUrl: css,
+        name: "CSS",
         type: "Frontend",
     },
     {
@@ -50,6 +35,16 @@ export const skills = [
         type: "Frontend",
     },
     {
+        imageUrl: javascript,
+        name: "JavaScript",
+        type: "Frontend",
+    },
+    {
+        imageUrl: nextjs,
+        name: "Next.js",
+        type: "Frontend",
+    },
+    {
         imageUrl: typescript,
         name: "TypeScript",
         type: "Frontend",
@@ -58,6 +53,11 @@ export const skills = [
         imageUrl: tailwindcss,
         name: "TailWind CSS",
         type: "Frontend",
+    },
+    {
+        imageUrl: github,
+        name: "GitHub",
+        type: "Version Control",
     }
 ];
 
@@ -65,9 +65,8 @@ export const experiences = [
     {
         title: "Software Developer Intern",
         company_name: "Aeroaspire",
-        // icon: aeroaspire,
-        // iconBg: "#b7e4c7",
         date: "Sep 2025 - Oct 2025",
+        link: 'https://drive.google.com/file/d/14IMSyJePEE36ZaF4iVnK6wjetruFLJCv/view?usp=sharing',
         points: [
             "Built production-ready features as part of a 5-week hands-on training sprint covering core software development concepts.",
             "Developed full-stack web applications using React/TypeScript (frontend), Flask/Python(backend), SQLite (database), and Docker (containerization).",

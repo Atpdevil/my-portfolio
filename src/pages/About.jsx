@@ -1,4 +1,3 @@
-import React from "react";
 import { skills, experiences } from "../constants";
 import { Timeline, Text } from "@mantine/core";
 import CTA from "../components/CTA";
@@ -47,13 +46,13 @@ const About = () => {
 
         <div className="mt-5 flex flex-col gap-3 text-slate-500">
           <p>
-            I've worked with various teams, building strong technical skills and
-            contributing to meaningful projects. Here's the quick overview:
-          </p>
+            I have collaborated with diverse teams to deliver well-structured software while continuously strengthening my technical and problem-solving skills. Below is a concise summary of my key contributions.          </p>
         </div>
 
         <div className="mt-3 w-full">
           <Timeline active={experiences.length} bulletSize={30} lineWidth={2}>
+            <hr className="border-slate-200" />
+            <br></br>
             {experiences.map((exp) => (
               <Timeline.Item
                 key={exp.company_name}
@@ -76,14 +75,27 @@ const About = () => {
                       {point}
                     </li>
                   ))}
+
+                  <br></br>
+                  {exp.link && (
+                    <a
+                      href={exp.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 font-semibold mt-2 inline-block hover:underline"
+                    >
+                      View Certificate →
+                    </a>
+
+                  )}
                 </ul>
               </Timeline.Item>
             ))}
           </Timeline>
         </div>
       </div>
-
       <hr className="border-slate-200" />
+
 
       <CTA />
     </section>
