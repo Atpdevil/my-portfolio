@@ -11,6 +11,12 @@ import linkedin from './linkedin.svg'
 import contact from './contact.svg'
 import pricewise from './pricewise.svg'
 import arrow from './arrow.svg'
+import git from './git.svg'
+import mongodb from './mongodb.svg'
+import java from './java.svg'
+import swagger from './swagger.svg'
+import summiz from './summiz.svg'
+import car from './car.svg'
 
 export {
     css,
@@ -25,5 +31,11 @@ export {
     linkedin,
     contact,
     arrow,
+    git,
+    mongodb,
+    java,
+    swagger,
+    summiz,
+    car,
     pricewise
 }

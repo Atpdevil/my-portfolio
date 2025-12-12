@@ -10,7 +10,13 @@ import {
     tailwindcss,
     linkedin,
     typescript,
-    pricewise
+    git,
+    pricewise,
+    mongodb,
+    swagger,
+    summiz,
+    java,
+    car
 } from "../assets/icons";
 
 export const skills = [
@@ -35,6 +41,11 @@ export const skills = [
         type: "Frontend",
     },
     {
+        imageUrl: java,
+        name: "Java",
+        type: "Frontend",
+    },
+    {
         imageUrl: javascript,
         name: "JavaScript",
         type: "Frontend",
@@ -53,6 +64,21 @@ export const skills = [
         imageUrl: tailwindcss,
         name: "TailWind CSS",
         type: "Frontend",
+    },
+    {
+        imageUrl: mongodb,
+        name: "MongoDB",
+        type: "Database",
+    },
+    {
+        imageUrl: swagger,
+        name: "Swagger",
+        type: "Database",
+    },
+    {
+        imageUrl: git,
+        name: "Git",
+        type: "Version Control",
     },
     {
         imageUrl: github,
@@ -95,8 +121,8 @@ export const socialLinks = [
 
 export const projects = [
     {
-        iconUrl: pricewise,
-        theme: 'btn-back-red',
+        iconUrl: car,
+        theme: 'btn-back-green',
         name: 'EVry Charge',
         description: 'Built a dual-role EV charging platform enabling users to find chargers, while hosts add stations.',
         link: 'https://evrycharge.vercel.app/',
@@ -109,8 +135,8 @@ export const projects = [
         link: 'https://gaming-masters-1.vercel.app/',
     },
     {
-        iconUrl: pricewise,
-        theme: 'btn-back-red',
+        iconUrl: summiz,
+        theme: 'btn-back-blue',
         name: 'Insight Tracker',
         description: 'Built an AI-powered tracker showing URL changes, alerts, and logs with auto-refresh.',
         link: 'https://ai-insight-tracker.vercel.app/',
