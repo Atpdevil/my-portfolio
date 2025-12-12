@@ -97,9 +97,9 @@ export const projects = [
     {
         iconUrl: pricewise,
         theme: 'btn-back-red',
-        name: 'Gaming Masters',
-        description: 'Created a collection of browser-based games optimized for mobile and desktop.',
-        link: 'https://gaming-masters-1.vercel.app/',
+        name: 'EVry Charge',
+        description: 'Built a dual-role EV charging platform enabling users to find chargers, while hosts add stations.',
+        link: 'https://evrycharge.vercel.app/',
     },
     {
         iconUrl: pricewise,
@@ -111,8 +111,8 @@ export const projects = [
     {
         iconUrl: pricewise,
         theme: 'btn-back-red',
-        name: 'Gaming Masters',
-        description: 'Created a collection of browser-based games optimized for mobile and desktop.',
-        link: 'https://gaming-masters-1.vercel.app/',
+        name: 'Insight Tracker',
+        description: 'Built an AI-powered tracker showing URL changes, alerts, and logs with auto-refresh.',
+        link: 'https://ai-insight-tracker.vercel.app/',
     }
 ];
