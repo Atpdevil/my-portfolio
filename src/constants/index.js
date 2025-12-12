@@ -16,6 +16,7 @@ import {
     swagger,
     summiz,
     java,
+    snapgram,
     car
 } from "../assets/icons";
 
@@ -116,6 +117,11 @@ export const socialLinks = [
         name: 'LinkedIn',
         iconUrl: linkedin,
         link: 'https://www.linkedin.com/in/gokul-k-1b5123291',
+    },
+    {
+        name: 'Instagram',
+        iconUrl: snapgram,
+        link: 'https://www.instagram.com/_gokulkrishna.s',
     }
 ];
 

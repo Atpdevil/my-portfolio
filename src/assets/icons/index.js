@@ -17,6 +17,7 @@ import java from './java.svg'
 import swagger from './swagger.svg'
 import summiz from './summiz.svg'
 import car from './car.svg'
+import snapgram from './snapgram.svg'
 
 export {
     css,
@@ -37,5 +38,6 @@ export {
     swagger,
     summiz,
     car,
+    snapgram,
     pricewise
 }
