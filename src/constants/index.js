@@ -1,4 +1,3 @@
-import { aeroaspire } from "../assets/images";
 import {
     css,
     github,
@@ -96,6 +95,20 @@ export const socialLinks = [
 ];
 
 export const projects = [
+    {
+        iconUrl: pricewise,
+        theme: 'btn-back-red',
+        name: 'Gaming Masters',
+        description: 'Created a collection of browser-based games optimized for mobile and desktop.',
+        link: 'https://gaming-masters-1.vercel.app/',
+    },
+    {
+        iconUrl: pricewise,
+        theme: 'btn-back-red',
+        name: 'Gaming Masters',
+        description: 'Created a collection of browser-based games optimized for mobile and desktop.',
+        link: 'https://gaming-masters-1.vercel.app/',
+    },
     {
         iconUrl: pricewise,
         theme: 'btn-back-red',
