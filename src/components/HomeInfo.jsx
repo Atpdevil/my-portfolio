@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const HomeInfo = ({ title, description, route }) => {
+const HomeInfo = ({ title, description, action }) => {
   return (
     <div
       className="
@@ -22,23 +22,43 @@ const HomeInfo = ({ title, description, route }) => {
         {description}
       </p>
 
-      {route && (
+      {action?.type === "route" && (
         <Link
-          to={route}
+          to={action.value}
           className="
-            w-full py-2 
+            w-full py-2
             bg-green-600
-            hover:bg-green-700 
-            rounded-xl 
+            hover:bg-green-700
+            rounded-xl
             font-semibold
-            flex items-center justify-center gap-2 
+            flex items-center justify-center gap-2
             text-[#3d3d3d]
-            shadow-md 
+            shadow-md
             transition
           "
         >
           Learn more <span className="text-lg">↠</span>
         </Link>
+      )}
+
+      {action?.type === "download" && (
+        <a
+          href={action.value}
+          download
+          className="
+            w-full py-2
+            bg-green-600
+            hover:bg-green-700
+            rounded-xl
+            font-semibold
+            flex items-center justify-center gap-2
+            text-[#3d3d3d]
+            shadow-md
+            transition
+          "
+        >
+          Download <span className="text-lg">↠</span>
+        </a>
       )}
     </div>
   );

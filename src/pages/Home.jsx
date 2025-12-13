@@ -2,7 +2,6 @@ import { Suspense, useRef, useEffect, useState } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import * as THREE from "three";
-
 import Loader from "../components/Loader";
 import BakerModel from "../components/BakerModel";
 import HomeInfo from "../components/HomeInfo";
@@ -46,25 +45,29 @@ const Home = () => {
     <section className="w-full h-screen bg-[#d9d9d9]">
       <div className="absolute bottom-10 left-10 z-10">
         {selected && (
-          <HomeInfo
-            title={selected.title}
-            description={selected.description}
-          />
+
+        <HomeInfo
+          title={selected.title}
+          description={selected.description}
+          action={selected.action}
+        />
+
         )}
       </div>
 
       <Canvas 
-        camera={{ position: [10, 20, 30], fov: 55 }}
+        camera={{ position: [15, 28, 28], fov: 50 }}
       >
         <Suspense fallback={<Loader />}>
           <Environment files="/hdris/forest.exr" background />
 
           <ambientLight intensity={0.4} />
+
           <directionalLight position={[10, 15, 10]} intensity={1.1} />
 
           <BakerModel
             ref={modelRef}
-            position={[0, -1, 0]}
+            position={[0, -6, 0]}
             onSelect={handleAnnotationSelect}
           />
 
