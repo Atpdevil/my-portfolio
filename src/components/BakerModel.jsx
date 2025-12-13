@@ -31,7 +31,14 @@ const BakerModel = forwardRef(({ onSelect, ...props }, ref) => {
       <primitive object={scene} />
 
       {resolvedAnnotations.map((a) => (
-        <Html key={a.id} position={a.position} center>
+        <Html 
+          key={a.id}
+          position={a.position}
+          transform={false}
+          center
+          distanceFactor={30}
+          zIndexRange={[10, 0]}
+        >
           <button
             className="annotation-dot"
             onClick={() => onSelect(a, a.mesh)}

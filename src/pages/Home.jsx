@@ -24,7 +24,6 @@ function CameraRig({ target }) {
 
 const Home = () => {
   const modelRef = useRef();
-  const controlsRef = useRef();
 
   const [cameraTarget, setCameraTarget] = useState(null);
   const [selected, setSelected] = useState(null);
