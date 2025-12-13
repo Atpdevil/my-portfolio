@@ -26,7 +26,7 @@ const Home = () => {
       x: x - 3,
       y: y + 2,
       z: z + 6,
-      duration: 1.2,
+      duration: 2.2,
       ease: "power3.out",
       onUpdate: () => {
         cameraRef.current.lookAt(lookAt);
@@ -49,7 +49,7 @@ const Home = () => {
 
   return (
     <section className="w-full h-screen relative">
-      <div className="absolute bottom-10 left-10 z-10">
+      <div className="absolute bottom-[67px] left-10 z-10">
         {selected && (
           <HomeInfo
             title={selected.title}

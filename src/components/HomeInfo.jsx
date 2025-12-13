@@ -14,7 +14,7 @@ const HomeInfo = ({ title, description, action }) => {
         border border-[#e0d6c8]
       "
     >
-      <p className="text-[16px] leading-snug font-semibold mb-4 text-center">
+      <p className="text-[25px] leading-snug font-semibold mb-2 text-center">
         {title}
       </p>
 
