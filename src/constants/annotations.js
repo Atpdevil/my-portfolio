@@ -1,4 +1,4 @@
-import { getTop, getCenter, getBehind } from "../utils/annotationHelpers";
+import { getTop } from "../utils/annotationHelpers";
 
 export const annotations = [
   {
