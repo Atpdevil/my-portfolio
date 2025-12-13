@@ -8,14 +8,10 @@ const BakerModel = forwardRef(({ onSelect, ...props }, ref) => {
   const resolvedAnnotations = useMemo(() => {
     const meshes = {};
 
-    // Collect meshes by name
     scene.traverse((child) => {
-      if (child.isMesh) {
-        meshes[child.name] = child;
-      }
+      if (child.isMesh) meshes[child.name] = child;
     });
 
-    // Map annotation config → world positions
     return annotations
       .map((cfg) => {
         const mesh = meshes[cfg.meshName];
@@ -23,8 +19,8 @@ const BakerModel = forwardRef(({ onSelect, ...props }, ref) => {
 
         return {
           ...cfg,
+          mesh,
           position: cfg.getPosition(mesh),
-          lookAt: mesh.position.toArray(),
         };
       })
       .filter(Boolean);
@@ -32,22 +28,13 @@ const BakerModel = forwardRef(({ onSelect, ...props }, ref) => {
 
   return (
     <group ref={ref} {...props}>
-      {/* Main model */}
       <primitive object={scene} />
 
-      {/* Annotation dots */}
       {resolvedAnnotations.map((a) => (
-        <Html
-          key={a.id}
-          position={a.position}
-          center
-          transform={false}
-          distanceFactor={20}
-          zIndexRange={[10, 0]}
-        >
+        <Html key={a.id} position={a.position} center>
           <button
             className="annotation-dot"
-            onClick={() => onSelect?.(a)}
+            onClick={() => onSelect(a, a.mesh)}
           >
             {a.id}
           </button>
@@ -58,6 +45,4 @@ const BakerModel = forwardRef(({ onSelect, ...props }, ref) => {
 });
 
 export default BakerModel;
-
-// Preload model
 useGLTF.preload("/models/baker.glb");
