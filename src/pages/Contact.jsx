@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
+import SocialIcons from "../components/SocialIcons";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -100,6 +101,7 @@ const Contact = () => {
             </p>
           )}
         </form>
+        <SocialIcons />
       </div>
     </div>
   );
