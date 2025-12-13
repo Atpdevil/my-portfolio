@@ -20,7 +20,6 @@ const BakerModel = forwardRef(({ onSelect, ...props }, ref) => {
         return {
           ...cfg,
           mesh,
-          position: cfg.getPosition(mesh),
         };
       })
       .filter(Boolean);
@@ -31,13 +30,12 @@ const BakerModel = forwardRef(({ onSelect, ...props }, ref) => {
       <primitive object={scene} />
 
       {resolvedAnnotations.map((a) => (
-        <Html 
+        <Html
           key={a.id}
           position={a.position}
-          transform={false}
           center
-          distanceFactor={30}
           zIndexRange={[10, 0]}
+          style={{ pointerEvents: "auto" }}
         >
           <button
             className="annotation-dot"
@@ -52,4 +50,5 @@ const BakerModel = forwardRef(({ onSelect, ...props }, ref) => {
 });
 
 export default BakerModel;
+
 useGLTF.preload("/models/baker.glb");
