@@ -204,3 +204,35 @@ body:has(.card[data-color="green"]:hover) {
     0.65vmin 1vmin #d2e4ff,
     1vmin 0.65vmin #d2e4ff;
 }
+
+.annotation-panel {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  max-width: 320px;
+}
+
+.annotation-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  border: 2px solid white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 600;
+  line-height: 1;
+}
+
+.annotation-dot:hover {
+  transform: scale(1.1);
+}

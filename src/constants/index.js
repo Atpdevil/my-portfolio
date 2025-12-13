@@ -148,3 +148,5 @@ export const projects = [
         link: 'https://ai-insight-tracker.vercel.app/',
     }
 ];
+
+export { annotations } from "./annotations";
