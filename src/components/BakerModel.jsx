@@ -1,27 +1,54 @@
-import { forwardRef, useMemo } from "react";
-import { useGLTF, Html } from "@react-three/drei";
+import { forwardRef, useEffect, useMemo } from "react";
+import { useGLTF, useAnimations, Html } from "@react-three/drei";
+import * as THREE from "three";
 import { annotations } from "../constants/annotations";
 
+const PLAY_THESE = [
+  "attackminiguns",
+  "hello",
+  "walkingstop",
+  "Take 01",
+];
+
 const BakerModel = forwardRef(({ onSelect, ...props }, ref) => {
-  const { scene } = useGLTF("/models/baker.glb");
+  const { scene, animations } = useGLTF("/models/baker.glb");
+  const { actions } = useAnimations(animations, scene);
+
+  /* ---------- PLAY SELECTED ANIMATIONS ---------- */
+
+  useEffect(() => {
+    if (!actions) return;
+
+    // stop everything first (important)
+    Object.values(actions).forEach((a) => a.stop());
+
+    PLAY_THESE.forEach((name) => {
+      const action = actions[name];
+      if (!action) {
+        console.warn(`Animation not found: ${name}`);
+        return;
+      }
+
+      action.reset();
+      action.setLoop(THREE.LoopRepeat, Infinity);
+      action.clampWhenFinished = false;
+      action.fadeIn(0.2);
+      action.play();
+    });
+
+    return () => {
+      Object.values(actions).forEach((a) => a.stop());
+    };
+  }, [actions]);
+
+  /* ---------- ANNOTATIONS ---------- */
 
   const resolvedAnnotations = useMemo(() => {
     const meshes = {};
-
-    scene.traverse((child) => {
-      if (child.isMesh) meshes[child.name] = child;
-    });
+    scene.traverse((c) => c.isMesh && (meshes[c.name] = c));
 
     return annotations
-      .map((cfg) => {
-        const mesh = meshes[cfg.meshName];
-        if (!mesh) return null;
-
-        return {
-          ...cfg,
-          mesh,
-        };
-      })
+      .map((cfg) => meshes[cfg.meshName] && { ...cfg, mesh: meshes[cfg.meshName] })
       .filter(Boolean);
   }, [scene]);
 
@@ -30,17 +57,8 @@ const BakerModel = forwardRef(({ onSelect, ...props }, ref) => {
       <primitive object={scene} />
 
       {resolvedAnnotations.map((a) => (
-        <Html
-          key={a.id}
-          position={a.position}
-          center
-          zIndexRange={[10, 0]}
-          style={{ pointerEvents: "auto" }}
-        >
-          <button
-            className="annotation-dot"
-            onClick={() => onSelect(a, a.mesh)}
-          >
+        <Html key={a.id} position={a.position} center>
+          <button className="annotation-dot" onClick={() => onSelect(a, a.mesh)}>
             {a.id}
           </button>
         </Html>
@@ -50,5 +68,4 @@ const BakerModel = forwardRef(({ onSelect, ...props }, ref) => {
 });
 
 export default BakerModel;
-
 useGLTF.preload("/models/baker.glb");

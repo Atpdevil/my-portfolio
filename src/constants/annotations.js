@@ -31,7 +31,7 @@ export const annotations = [
     meshName: "characters004_house_0",
     title: "Download CV",
     description: "Professional Resume",
-    position: [-4, 4.0, 7],
+    position: [-5, 3, 10],
     action: { type: "download", value: "/cv/Gokul_CV.pdf" },
   },
 ];
