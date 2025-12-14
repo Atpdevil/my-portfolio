@@ -15,7 +15,7 @@ const UiballLoader = () => {
         stroke-length="0.15"
         bg-opacity="0.2"
         speed="3"
-        color="blue"
+        color="green"
       />
     </Html>
   );
