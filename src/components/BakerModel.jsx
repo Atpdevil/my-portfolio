@@ -14,8 +14,6 @@ const BakerModel = forwardRef(({ onSelect, ...props }, ref) => {
   const { scene, animations } = useGLTF("/models/baker.glb");
   const { actions } = useAnimations(animations, scene);
 
-  /* ---------- PLAY SELECTED ANIMATIONS ---------- */
-
   useEffect(() => {
     if (!actions) return;
 
@@ -40,8 +38,6 @@ const BakerModel = forwardRef(({ onSelect, ...props }, ref) => {
       Object.values(actions).forEach((a) => a.stop());
     };
   }, [actions]);
-
-  /* ---------- ANNOTATIONS ---------- */
 
   const resolvedAnnotations = useMemo(() => {
     const meshes = {};

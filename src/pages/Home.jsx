@@ -1,16 +1,14 @@
 import { Suspense, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment } from "@react-three/drei";
 import * as THREE from "three";
 import gsap from "gsap";
-
-import Loader from "../components/Loader";
-import BakerModel from "../components/BakerModel";
+import UiballLoader from "../components/UiballLoader";
 import HomeInfo from "../components/HomeInfo";
+import Scene from "../components/Scene";
 
 const Home = () => {
-  const controlsRef = useRef();
-  const cameraRef = useRef();
+  const controlsRef = useRef(null);
+  const cameraRef = useRef(null);
 
   const [selected, setSelected] = useState(null);
 
@@ -44,11 +42,13 @@ const Home = () => {
         }
       },
     });
+
     setSelected(annotation);
   };
 
   return (
     <section className="w-full h-screen relative">
+      {/* INFO CARD */}
       <div className="absolute bottom-[67px] left-10 z-10">
         {selected && (
           <HomeInfo
@@ -62,24 +62,13 @@ const Home = () => {
       <Canvas
         camera={{ position: [15, 28, 28], fov: 50 }}
         onCreated={({ camera }) => (cameraRef.current = camera)}
+        gl={{ preserveDrawingBuffer: true }}
+        dpr={[1, 1.5]}
       >
-        <Suspense fallback={<Loader />}>
-          <Environment files="/hdris/forest.exr" background />
-          <ambientLight intensity={0.4} />
-          <directionalLight position={[10, 15, 10]} intensity={1.1} />
-
-          <BakerModel
-            position={[0, 0, 0]}
+        <Suspense fallback={<UiballLoader />}>
+          <Scene
+            controlsRef={controlsRef}
             onSelect={handleAnnotationSelect}
-          />
-
-          <OrbitControls
-            ref={controlsRef}
-            enablePan
-            enableZoom
-            enableRotate
-            enableDamping
-            dampingFactor={0.05}
           />
         </Suspense>
       </Canvas>
