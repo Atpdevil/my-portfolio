@@ -120,10 +120,11 @@ npm install
 npm run dev
 ```
 
+Check It Out [My-Portfolio](https://3d-portfolio-gokul.vercel.app/).
+
 ### Author
 
 ```bash
 Gokul
 Focused on immersive web experiences using Three.js and modern React tooling.
-Check It Out - [My-Portfolio](https://3d-portfolio-gokul.vercel.app/)
 ```
