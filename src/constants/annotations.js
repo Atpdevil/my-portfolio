@@ -13,7 +13,7 @@ export const annotations = [
     meshName: "characters006_tree_0",
     title: "Contact Me",
     description: "Let's Connect and Talk",
-    position: [1.0, 9, -2.0],
+    position: [-1, 9, -2.0],
     action: { type: "route", value: "/contact" },
   },
 

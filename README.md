@@ -1,16 +1,129 @@
-# React + Vite
+# 3D Interactive Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> An interactive 3D portfolio built with React, Three.js, and React Three Fiber, featuring animated models, camera transitions, ambient audio, and contextual UI overlays.
 
-Currently, two official plugins are available:
+This project showcases my work through a fully immersive 3D scene rather than traditional static sections
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+`3D Scene Rendering`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Built using @react-three/fiber and three.js
+- HDR environment lighting for realism
+- Optimized camera controls with smooth GSAP transitions
 
-## Expanding the ESLint configuration
+`Interactive Annotations`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Clickable markers placed inside the 3D world
+- Each annotation focuses the camera and reveals contextual information
+- HTML overlays rendered safely using @react-three/drei
+
+`Model Animations`
+
+- GLTF model animations controlled via useAnimations
+- Multiple animations running simultaneously
+- Clean animation lifecycle management (start, stop, cleanup)
+
+`Custom Loader`
+
+- Animated loader using uiball (ldrs squircle)
+- Rendered inside the Canvas using Drei’s `<Html>` to avoid WebGL context loss
+
+`Global Background Audio`
+
+- Ambient background music with mute/unmute toggle
+- Audio persists across all routes
+- Transparent floating sound control UI
+
+`Routing`
+
+- Page navigation using `react-router-dom`
+
+**Pages include:**
+
+- Home
+- About
+- Projects
+- Contact
+
+## Tech Stack
+
+`Frontend`
+
+- React
+- Vite
+- Tailwind CSS
+
+`3D & Animation`
+
+- Three.js
+- @react-three/fiber
+- @react-three/drei
+- GSAP
+
+`Assets`
+
+- GLB 3D models
+- HDR environment maps
+- SVG icons
+- MP3 background audio
+
+Project Structure
+
+```bash
+src/
+├── assets/
+│   ├── icons/
+│   │   ├── ../.svg
+│   │   ├── soundon.svg
+│   │   └── soundoff.svg
+│   └── sakura.mp3
+│
+├── components/
+│   ├── BakerModel.jsx
+│   ├── GlobalAudio.jsx
+│   ├── HomeInfo.jsx
+│   ├── Loader.jsx
+│   ├── Navbar.jsx
+│   └── UiballLoader.jsx
+│
+├── constants/
+│   └── annotations.js
+│   └── index.js
+│
+├── pages/
+│   ├── Home.jsx
+│   ├── About.jsx
+│   ├── Projects.jsx
+│   └── Contact.jsx
+│   └── index.js
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+## Interaction Guide
+
+- `Rotate / Zoom / Pan`: Mouse or trackpad (OrbitControls)
+- `Click Annotations`: Camera smoothly focuses and displays info
+- `Sound Toggle`: Floating icon at top-right corner
+- `Navigation`: Navbar links between sections
+
+### Development
+
+```jsx
+npm install
+```
+
+```jsx
+npm run dev
+```
+
+### Author
+
+```bash
+Gokul
+Focused on immersive web experiences using Three.js and modern React tooling.
+Check It Out - [My-Portfolio](https://3d-portfolio-gokul.vercel.app/)
+```
