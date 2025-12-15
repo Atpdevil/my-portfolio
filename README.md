@@ -110,7 +110,7 @@ src/
 - `Sound Toggle`: Floating icon at top-right corner
 - `Navigation`: Navbar links between sections
 
-### Development
+## Development
 
 ```jsx
 npm install
@@ -121,10 +121,3 @@ npm run dev
 ```
 
 Check It Out [My-Portfolio](https://3d-portfolio-gokul.vercel.app/).
-
-### Author
-
-```bash
-Gokul
-Focused on immersive web experiences using Three.js and modern React tooling.
-```
